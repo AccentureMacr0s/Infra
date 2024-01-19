@@ -1,8 +1,11 @@
-resource "aws_instance" "example" {
-  ami           = "ami-0abcdef1234567890" # Замените на ваш AMI ID
+resource "aws_instance" "aws_linux_instance" {
+  ami           = var.aws_linux_ami
   instance_type = "t2.micro"
+  # Другие необходимые конфигурации
+}
 
-  tags = {
-    Name = "ExampleInstance"
-  }
+resource "aws_instance" "varbox_linux_instance" {
+  ami           = var.varbox_linux_ami
+  instance_type = "t2.micro"
+  # Другие необходимые конфигурации
 }
