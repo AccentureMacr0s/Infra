@@ -15,11 +15,11 @@ Vagrant.configure("2") do |config|
       override.ssh.private_key_path = "~/.ssh/your-key.pem"
     end
   
-    # Настройка провижининга с использованием Chef Solo
+    # Настройка провижининга с использованием Chef Solo но ["./data_bags"] остутсвует как папка в этом проекте
     config.vm.provision "chef_solo" do |chef|
       chef.cookbooks_path = ["./cookbooks"]
       chef.roles_path = ["./roles"]
-      chef.data_bags_path = ["./data_bags"]
+      chef.data_bags_path = ["./data_bags"] 
       chef.environment = "_default"
       chef.add_role "cloudwatch"
       chef.add_role "ssm"
