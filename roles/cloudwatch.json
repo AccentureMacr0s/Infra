@@ -1,0 +1,14 @@
+{
+    "name": "cloudwatch",
+    "description": "Role for configuring AWS CloudWatch",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+      "cloudwatch": {
+        "config": "/opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json"
+      }
+    },
+    "run_list": [
+      "recipe[cloudwatch]"
+    ]
+  }
+  

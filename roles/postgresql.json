@@ -1,0 +1,14 @@
+{
+    "name": "postgresql",
+    "description": "Role for PostgreSQL setup",
+    "json_class": "Chef::Role",
+    "default_attributes": {
+      "postgresql": {
+        "version": "15"
+      }
+    },
+    "run_list": [
+      "recipe[postgresql]"
+    ]
+  }
+  

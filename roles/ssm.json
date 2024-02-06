@@ -1,0 +1,10 @@
+{
+    "name": "ssm",
+    "description": "Role for installing and configuring AWS SSM Agent",
+    "json_class": "Chef::Role",
+    "default_attributes": {},
+    "run_list": [
+      "recipe[ssm]"
+    ]
+  }
+  

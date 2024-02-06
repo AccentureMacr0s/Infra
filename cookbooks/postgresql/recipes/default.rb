@@ -1,10 +1,10 @@
 # Установка PostgreSQL
-package 'postgresql15' do
+package 'postgresql' do
     action :install
   end
   
   # Настройка службы PostgreSQL
-  service 'postgresql-15' do
+  service 'postgresql' do
     supports status: true, restart: true, reload: true
     action [:enable, :start]
   end
