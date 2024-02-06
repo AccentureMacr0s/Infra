@@ -55,3 +55,37 @@ aws.security_groups, aws.subnet_id, и aws.keypair_name должны быть н
 ```
 vagrant up --provider=aws
 ```
+
+## Установка SSM Agent на Ubuntu
+
+SSM Agent по умолчанию установлен на образах Ubuntu Server 22.04 LTS, 20.04, 18.04 и 16.04 LTS 64-bit с идентификатором 20180627 или более поздней версии.
+
+### Установка SSM Agent
+
+Если вам необходимо установить SSM Agent на локальный сервер или выполнить переустановку агента, используйте следующий скрипт. Указывать URL для загрузки не требуется, поскольку команда `snap` автоматически загружает агент из магазина приложений Snap по адресу [snapcraft.io](https://snapcraft.io).
+
+```bash
+sudo snap install amazon-ssm-agent --classic
+```
+
+### Проверка статуса SSM Agent
+
+Для проверки, запущен ли SSM Agent, выполните следующую команду:
+
+```bash
+sudo snap list amazon-ssm-agent
+```
+
+Если предыдущая команда показывает, что `amazon-ssm-agent` остановлен, неактивен или отключен, используйте следующую команду для запуска сервиса:
+
+```bash
+sudo snap start amazon-ssm-agent
+```
+
+### Проверка статуса агента
+
+Для проверки статуса SSM Agent выполните:
+
+```bash
+sudo snap services amazon-ssm-agent
+```
